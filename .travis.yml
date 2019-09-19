@@ -14,9 +14,9 @@ after_success:
         - docker build -t vmady/multi-server ./server
         - docker build -t vmady/multi-worker ./worker
         
-          # log in to the docker CLI
+         # log in to the docker CLI
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-          # Take those images and push them to docker hub
+         # Take those images and push them to docker hub
         - docker push vmady/multi-client
         - docker push vmady/multi-nginx
         - docker push vmady/multi-server
