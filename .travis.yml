@@ -9,15 +9,15 @@ script:
         - docker run -e CI=true vikashkumar/multi-test  npm test
 
 after_success:
-        - docker build -t vikashkumar/multi-client ./client
-        - docker build -t vikashkumar/multi-nginx ./nginx
-        - docker build -t vikashkumar/multi-server ./server
-        - docker build -t vikashkumar/multi-worker ./worker
+        - docker build -t vmady/multi-client ./client
+        - docker build -t vmady/multi-nginx ./nginx
+        - docker build -t vmady/multi-server ./server
+        - docker build -t vmady/multi-worker ./worker
         
           # log in to the docker CLI
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
           # Take those images and push them to docker hub
-        - docker push vikashkumar/multi-client
-        - docker push vikashkumar/multi-nginx
-        - docker push vikashkumar/multi-server
-        - docker push vikashkumar/multi-worker
+        - docker push vmady/multi-client
+        - docker push vmady/multi-nginx
+        - docker push vmady/multi-server
+        - docker push vmady/multi-worker
