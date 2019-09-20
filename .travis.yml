@@ -21,3 +21,18 @@ after_success:
         - docker push vmady/multi-nginx
         - docker push vmady/multi-server
         - docker push vmady/multi-worker
+
+deploy:
+        provider: elasticbeanstalk
+        region: ap-south-1
+        app: Multi-docker
+        env: MultiDocker-env
+        bucket_name:arn: elasticbeanstalk-ap-south-1-007131111482
+        bucket_path: docker-multi
+        on:
+                branch: master
+        access_key_id:
+                secure: $AWS_ACCESS_KEY
+        secret_access_key:
+                secure: $AWS_SECRET_KEY
+
