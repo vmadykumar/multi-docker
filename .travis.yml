@@ -27,7 +27,7 @@ deploy:
         region: ap-south-1
         app: Multi-docker
         env: MultiDocker-env
-        bucket_name:arn: elasticbeanstalk-ap-south-1-007131111482
+        bucket_name: elasticbeanstalk-ap-south-1-007131111482
         bucket_path: docker-multi
         on:
                 branch: master
